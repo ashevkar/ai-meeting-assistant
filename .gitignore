@@ -1,0 +1,34 @@
+# Environment
+.env
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+venv/
+.venv/
+*.egg-info/
+
+# Uploads
+backend/uploads/
+uploads/
+
+# Node
+node_modules/
+frontend/dist/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Alembic (keep versions tracked)
+# alembic/versions/
+
+# Docker volumes
+postgres_data/
