@@ -48,17 +48,3 @@ def health_check():
     return {"status": "ok"}
 
 
-@app.on_event("startup")
-def startup_event():
-    # Preload Whisper model to avoid cold-start delay on first upload
-    try:
-        from services.transcription import get_model
-        get_model()
-    except Exception:
-        pass
-    # Pre-warm sentence-transformers embedding model (~90MB download on first run)
-    try:
-        from services.rag import get_embedding_model
-        get_embedding_model()
-    except Exception:
-        pass
